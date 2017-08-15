@@ -2,13 +2,24 @@ var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
+var hbs = require('hbs');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+var HandlebarsIntl = require("handlebars-intl");
 var index = require('./routes/index');
 var users = require('./routes/users');
+var helpers = require('handlebars-helpers')
 
 var app = express();
+
+// Mongoose
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://dec0mpiled:welcometor4ge@ds028310.mlab.com:28310/anonbombdb', {useMongoClient: true});
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  console.log("Connected to anonbombdb as dec0mpiled...");
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
