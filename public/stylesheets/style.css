@@ -244,6 +244,26 @@ input:focus, button:focus, .btn:focus {
   text-decoration: none;
 }
 
+.btnr:hover {
+  background-color:#000;
+  color: #FFF;
+  text-decoration: none;
+}
+
+.btnr {
+    background-color: #FFF; 
+    color: #000; 
+    border: 2px solid #000;
+    padding: 5px 7px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    border-radius: 4px;
+    -webkit-transition-duration: 0.2s; /* Safari */
+    transition-duration: 0.2s;
+}
+
 .fbbtn {
      /* Green */
     background-color: white; 

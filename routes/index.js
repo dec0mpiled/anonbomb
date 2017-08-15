@@ -40,6 +40,7 @@ router.get('/id/:id', function(req, res, next) {
             }
           });
       } else {
+        user.postss.reverse();
            res.render('me', { data:user });
       }
   });
@@ -48,21 +49,25 @@ router.get('/id/:id', function(req, res, next) {
 router.get('/newid', function(req,res,next){
     
     var text = "";
+    var text1 = "";
   var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
   for (var i = 0; i < 5; i++)
     text += possible.charAt(Math.floor(Math.random() * possible.length));
+    
+    for (var i = 0; i < 5; i++)
+    text1 += possible.charAt(Math.floor(Math.random() * possible.length));
     
     
 
     var newid = new User({
         
         pid: text,
-        sid: reverseString(text),
+        sid: text1,
        
     });
     newid.save();
-    res.render('links', {pid:text, sid:reverseString(text)});
+    res.render('links', {pid:text, sid:text1});
 });
 
 function reverseString(str) {
