@@ -41,6 +41,7 @@ router.get('/id/:id', function(req, res, next) {
           });
       } else {
         user.postss.reverse();
+
            res.render('me', { data:user });
       }
   });

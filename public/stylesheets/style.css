@@ -205,7 +205,7 @@ textarea:hover, textarea:active, textarea:focus, .input-gif:hover, .input-gif:ac
 
 .input-title1 {
   border: 1px solid #000;
-  width:100%;
+  width:60%;
   font-size: 1em;
   padding: .5em;
   border-radius: 2px;

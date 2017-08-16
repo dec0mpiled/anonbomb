@@ -10,20 +10,42 @@
 
 <div class="bit-1" style="padding:3%">
     <center>
-    <h2>share this url with your friends: <a href="http://anonbomb.club/id/{{sid}}">anonbomb.club/id/{{sid}}</a></h2>
-        <br><br>
-<h2>visit this url to see comments you have received: <a href="http://anonbomb.club/id/{{pid}}">anonbomb.club/id/{{pid}}</a></h2>
-    <br><br><br>
+        <h4>send this url to friends:</h4><br>
+        <input class="input-title1" value="http://anonbomb.club/id/{{sid}}">
+        <button style="font-size: 15px;" class="btnt btn" id= "btn1g" onclick="btn1go()" data-clipboard-text="http://anonbomb.club/id/{{sid}}">
+    click to copy
+</button>
+    
+        <br><br><br>
+        <h4>visit this url to see what people have said about you:</h4><br>
+        <input class="input-title1" value="http://anonbomb.club/id/{{pid}}">
+        <button style="font-size: 15px;" class="btnt btn" id= "btn2g" onclick="btn2go()" data-clipboard-text="http://anonbomb.club/id/{{pid}}">
+    click to copy
+</button>
+    <br><br><br><br>
     <i>protip: bookmark the second link (or add it to your home screen) for easier access!</i>
     </center>
     
 </div>
 
-<script src="dist/clipboard.min.js"></script>
+    <script src="../javascripts/clipboard.min.js"></script>
 
-<script>
+    <!-- 3. Instantiate clipboard by passing a string selector -->
+    <script>
+    var clipboard = new Clipboard('.btnt');
+    clipboard.on('success', function(e) {
+        console.log(e);
+    });
+    clipboard.on('error', function(e) {
+        console.log(e);
+    });
     
-    
-    
-    
-</script>
+    function btn1go() {
+       document.getElementById("btn1g").innerHTML = "copied!"
+       document.getElementById("btn2g").innerHTML = "click to copy"
+    }
+        function btn2go() {
+       document.getElementById("btn2g").innerHTML = "copied!"
+       document.getElementById("btn1g").innerHTML = "click to copy"
+    }
+    </script>
