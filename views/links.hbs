@@ -10,20 +10,21 @@
 
 <div class="bit-1" style="padding:3%">
     <center>
-        <h4>send this url to friends:</h4><br>
-        <input class="input-title1" value="http://anonbomb.club/id/{{sid}}">
-        <button style="font-size: 15px;" class="btnt btn" id= "btn1g" onclick="btn1go()" data-clipboard-text="http://anonbomb.club/id/{{sid}}">
-    click to copy
+        <h3>send this url to friends:</h3><br>
+        <!--<input class="input-title1" value="http://anonbomb.club/id/{{sid}}">!-->
+        <button style="font-size: 15px;" class="btnt btn" onclick="copy()" id= "btn1g" data-clipboard-text="http://anonbomb.club/id/{{sid}}">
+    http://anonbomb.club/id/{{sid}}
 </button>
     
-        <br><br><br>
-        <h4>visit this url to see what people have said about you:</h4><br>
-        <input class="input-title1" value="http://anonbomb.club/id/{{pid}}">
-        <button style="font-size: 15px;" class="btnt btn" id= "btn2g" onclick="btn2go()" data-clipboard-text="http://anonbomb.club/id/{{pid}}">
-    click to copy
-</button>
+        <br><br>
+        <p id="copytag" style="display:none"><i>Copied Successfully!</i></p><br>
+        <h3>visit this url to see what people have said about you:</h3><br>
+        <!--<input class="input-title1" value="http://anonbomb.club/id/{{pid}}">!-->
+        <a href="http://anonbomb.club/id/{{pid}}" style="font-size: 15px;" class="btn" id= "btn2g" data-clipboard-text="http://anonbomb.club/id/{{pid}}">
+    http://anonbomb.club/id/{{pid}}
+</a>
     <br><br><br><br>
-    <i>protip: bookmark the second link (or add it to your home screen) for easier access!</i>
+    <i>protip: bookmark the second url (or add it to your home screen) for easier access!</i>
     </center>
     
 </div>
@@ -40,12 +41,7 @@
         console.log(e);
     });
     
-    function btn1go() {
-       document.getElementById("btn1g").innerHTML = "copied!"
-       document.getElementById("btn2g").innerHTML = "click to copy"
-    }
-        function btn2go() {
-       document.getElementById("btn2g").innerHTML = "copied!"
-       document.getElementById("btn1g").innerHTML = "click to copy"
+    function copy() {
+        document.getElementById("copytag").style.display = "block"
     }
     </script>

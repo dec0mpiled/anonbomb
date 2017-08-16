@@ -467,7 +467,7 @@
 .glyphicon-heart-empty:before {
   content: "\e143";
 }
-.glyphicon-link:before {
+.glyphicon-url:before {
   content: "\e144";
 }
 .glyphicon-phone:before {

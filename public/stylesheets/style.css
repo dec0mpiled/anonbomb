@@ -19,7 +19,7 @@ li a {
     text-decoration: none;
 }
 
-/* Change the link color on hover */
+/* Change the url color on hover */
 li a:hover {
     background-color: #555;
     color: white;
@@ -842,7 +842,7 @@ input:focus, button:focus, .btn:focus {
 .glyphicon-heart-empty:before {
   content: "\e143";
 }
-.glyphicon-link:before {
+.glyphicon-url:before {
   content: "\e144";
 }
 .glyphicon-phone:before {
