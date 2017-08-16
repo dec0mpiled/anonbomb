@@ -41,8 +41,16 @@ router.get('/id/:id', function(req, res, next) {
           });
       } else {
         user.postss.reverse();
-
-           res.render('me', { data:user });
+        console.log("yay")
+        console.log(user.postss)
+        if (user.postss.length<1) {
+          console.log("empty")
+          var msg="nothing here yet..."
+        } else {
+         console.log("full")
+         var msg=null
+        }
+           res.render('me', { data:user, what:msg });
       }
   });
 });
