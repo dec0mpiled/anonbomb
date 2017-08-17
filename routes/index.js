@@ -10,10 +10,11 @@ router.get('/', function(req, res, next) {
 router.post('/send', function(req, res, next) {
   var comment = req.body.textbox;
   var npid = req.body.hi;
+  var locationa = req.body.loc;
 
 User.findOne({pid:npid}, function (err, user){
   console.log("made it!")
-        user.postss.push({value: comment, created: new Date() });
+        user.postss.push({value: comment, created: new Date(), location:locationa });
         user.save();
 res.redirect("/thanks")
   
@@ -27,7 +28,10 @@ router.get('/thanks', function(req, res, next) {
   
 });
 
-router.get('/id/:id', function(req, res, next) {
+router.get('/id/:id/:loc?', function(req, res, next) {
+  var location = req.params.loc;
+  var newloc;
+  console.log(location)
   User.findOne({pid:req.params.id}, function(err, user) {
       console.log(user);
       if (user==null) {
@@ -36,7 +40,20 @@ router.get('/id/:id', function(req, res, next) {
             if (user1==null) {
               res.render('404');
             } else {
-              res.render('strange', { data:user1 });
+              if (location == "sc") {
+          newloc = "viaSnapchat"
+        } else if (location == "is") {
+          newloc = "viaInstagram"
+        } else if (location == "fb") {
+          newloc = "viaFacebook"
+        } else if (location == "ti") {
+          newloc = "viaTinder"
+        } else if (location == undefined) {
+          newloc = ""
+        } else {
+          newloc = "via{[unknown.location]}"
+        }
+              res.render('strange', { data:user1, newloc:newloc });
             }
           });
       } else {
@@ -50,7 +67,8 @@ router.get('/id/:id', function(req, res, next) {
          console.log("full")
          var msg=null
         }
-           res.render('me', { data:user, what:msg });
+        
+           res.render('me', { data:user, what:msg});
       }
   });
 });
