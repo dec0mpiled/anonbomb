@@ -41,17 +41,17 @@ router.get('/id/:id/:loc?', function(req, res, next) {
               res.render('404');
             } else {
               if (location == "sc") {
-          newloc = "viaSnapchat"
+          newloc = "via&nbsp;Snapchat"
         } else if (location == "is") {
-          newloc = "viaInstagram"
+          newloc = "via&nbsp;Instagram"
         } else if (location == "fb") {
-          newloc = "viaFacebook"
+          newloc = "via&nbsp;Facebook"
         } else if (location == "ti") {
-          newloc = "viaTinder"
+          newloc = "via&nbsp;Tinder"
         } else if (location == undefined) {
           newloc = ""
         } else {
-          newloc = "via{[unknown.location]}"
+          newloc = "via&nbsp;{[unknown.location]}"
         }
               res.render('strange', { data:user1, newloc:newloc });
             }
