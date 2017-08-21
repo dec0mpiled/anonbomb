@@ -2,21 +2,87 @@
 <nav class="navbar">
  <div class="wrapper">
      <center>
-  <a class="navbar-brand" href="/">anonbomb</a>
+  <a class="navbar-brand" href="/"><b><i>anonbomb</i></b></a>
   </center>
  </div>
 </nav>
 <div class="bit-1"><br><br><br><br><br></div>
 
 <div class="bit-1" style="padding:2%">
-    
-    <form id="getid" action="/newid" method="get">
-    <center><button class="btn">click here for your urls</button>
-    <br><br><hr><br>
-    <h2>how does it work?</h2>
-    <br>
-    <h4>click the button above to receive your personal anonbomb urls. share the first url with friends, so they can leave you comments. <br><br>visit the second url to see comments you have received! (make sure to keep the second url private)</h4>
+    <center>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>ID Form</title>
+  
+</head>
+
+<body>
+  <body>
+	<div class="login">
+		<div class="login-screen">
+			<div class="app-title">
+				<h1>registration</h1>
+			</div>
+            <form id="getid" action="/newid" method="get">
+			<div class="login-form">
+				<button class="btn btn-primary btn-large btn-block" >get custom link</button>
+				<br>
+				<button type="button" class="btn btn-primary btn-large btn-block" id="btn1">instructions</button>
+				<div id="content" style="display: none;">
+				    <br>
+				    <p><b>thank you for using anonbomb!</b> <br><br> here's how it works:<br><br> 1. simply click on "get custom link", and you'll be given two
+				    links.<br><br>2. share the first link with your friends so they can leave you anonymous messages.<br><br>3. bookmark and visit the second link to see messages that you have received!</p>
+				    
+				</div>
+				<br>
+				<p class="login-link" href="#">anonbomb © 2017 - dec0mpiled</p>
+			</div>
+			</form>
+		</div>
+		<div>
+		    <br><br><br>
+<script type="text/javascript">
+sa_client = "e1bf7958f1d0c93223e8a698d10b526b";
+sa_code = "06f3cade9552106da3b060d96baaa5e3";
+sa_protocol = ("https:"==document.location.protocol)?"https":"http";
+sa_pline = "3";
+sa_maxads = "1";
+sa_bgcolor = "FFFFFF";
+sa_bordercolor = "3EBEF3";
+sa_superbordercolor = "3EBEF3";
+sa_linkcolor = "001EB5";
+sa_desccolor = "000000";
+sa_urlcolor = "005677";
+sa_b = "1";
+sa_format = "banner_234x60";
+sa_width = "234";
+sa_height = "60";
+sa_location = "0";
+sa_radius = "6";
+sa_borderwidth = "2";
+sa_font = "0";
+</script>
+<script type="text/javascript" src="//sa.entireweb.com/sense2.js"></script>
+		</div>
+	</div>
+</body>
+  
+  
+</body>
+</html>
+
     </center>
-    </form>
-    
 </div>
+
+<script src="/jquery-3.2.1.js"></script>
+<script>
+  
+  
+  jQuery(document).ready(function(){
+        jQuery('#btn1').on('click', function(event) {        
+             jQuery('#content').toggle('show');
+        });
+    });
+
+</script>

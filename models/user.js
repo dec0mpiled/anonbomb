@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var posts = new Schema({ value: String, sid: String, created: Date, location: String });
+var posts = new Schema({ value: String, sid: String, created: String, location: String });
 
 
 var User = new Schema({

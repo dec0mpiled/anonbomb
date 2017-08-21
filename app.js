@@ -43,6 +43,58 @@ app.use(function(req, res, next) {
   next(err);
 });
 
+
+hbs.registerHelper('isblank', function(lvalue, options) {
+    if (arguments.length < 3)
+        throw new Error("Handlebars Helper equal needs 2 parameters");
+    if( lvalue!="" ) {
+        return options.inverse(this);
+    } else {
+        return options.fn(this);
+    }
+});
+
+hbs.registerHelper('equal', function(lvalue, rvalue, options) {
+    if (arguments.length < 3)
+        throw new Error("Handlebars Helper equal needs 2 parameters");
+    if( lvalue!=rvalue ) {
+        return options.inverse(this);
+    } else {
+        return options.fn(this);
+    }
+});
+
+hbs.registerHelper('ifeq', function(v1, v2, options) {
+  if(v1 === v2) {
+    return options.fn(this);
+  }
+  return options.inverse(this);
+});
+
+hbs.registerHelper('if', function(v1, options) {
+  if(v1 != null) {
+    return options.fn(this);
+  }
+  return options.inverse(this);
+});
+
+hbs.registerHelper('ifneq', function(v1, v2, options) {
+  if(v1 != v2) {
+    return options.fn(this);
+  }
+  return options.inverse(this);
+});
+
+hbs.registerHelper('or', function(v1, v2, v3, v4, options) {
+  if(v1 == v2 || v3==v4) {
+    return options.fn(this);
+  }
+  return options.inverse(this);
+});
+
+
+HandlebarsIntl.registerWith(hbs);
+
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development

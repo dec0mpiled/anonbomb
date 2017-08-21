@@ -11,10 +11,16 @@ router.post('/send', function(req, res, next) {
   var comment = req.body.textbox;
   var npid = req.body.hi;
   var locationa = req.body.loc;
+  
+  console.log(npid)
 
 User.findOne({pid:npid}, function (err, user){
   console.log("made it!")
-        user.postss.push({value: comment, created: new Date(), location:locationa });
+      var mydate = new Date().toString();
+    console.log(mydate)
+  var n = mydate.search("GM");
+  var newdate = mydate.substring(3, (n-1));
+        user.postss.push({value: comment, created: newdate, location:locationa });
         user.save();
 res.redirect("/thanks")
   
@@ -48,7 +54,7 @@ router.get('/id/:id/:loc?', function(req, res, next) {
           newloc = "via&nbsp;Facebook"
         } else if (location == "ti") {
           newloc = "via&nbsp;Tinder"
-        } else if (location == undefined) {
+        } else if (location == undefined || location == null) {
           newloc = ""
         } else {
           newloc = "via&nbsp;{[unknown.location]}"
