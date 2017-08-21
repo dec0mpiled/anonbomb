@@ -68,7 +68,7 @@ router.get('/id/:id/:loc?', function(req, res, next) {
         console.log(user.postss)
         if (user.postss.length<1) {
           console.log("empty")
-          var msg="nothing here yet..."
+          var msg="nothing here yet :("
         } else {
          console.log("full")
          var msg=null
