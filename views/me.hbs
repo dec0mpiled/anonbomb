@@ -2,7 +2,7 @@
 <nav class="navbar">
  <div class="wrapper">
      <center>
-  <a class="navbar-brand" href="/"><b><i>anonbomb</i></b></a>
+  <a class="navbar-brand" href="/">anonbomb</a>
   </center>
  </div>
 </nav>
@@ -14,8 +14,7 @@
 <head>
     <meta charset="UTF-8">
   <title>ID Form</title>
-<input value="anonbomb.club/id/{{data.sid}}">
-<br><br>
+
 </head>
 
 <body>
@@ -24,13 +23,15 @@
 		<div class="login-screen">
 			<div class="app-title">
 				<h1>messages</h1>
+					anonbomb.club/id/{{data.sid}}
 			</div>
+			<br>
 			<div class="login-form">
-                <br>
+                
                 <p>{{what}}</p>
                 {{#each data.postss}}
                 
-                <div style="border: 1px solid #ccc; border-radius: 3px; padding: 15px">
+                <div style="border: 1px solid #ccc; border-radius: 3px; padding: 15px;">
                 <h3>anonymous commented:</h3> <br> <p>{{{value}}}</p>
                 <br>
             
